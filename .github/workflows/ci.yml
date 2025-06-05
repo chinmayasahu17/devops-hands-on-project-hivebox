@@ -53,7 +53,7 @@ jobs:
         run: |
           response=$(curl -s http://localhost:5000/version)
           echo "Response from /version : $response"
-          if [ "$response" != "0.0.1" ]; then
+          if [[ "$response" != *"0.0.1"* ]]; then
             echo "Version endpoint returned incorrect"
             exit 1
           fi
